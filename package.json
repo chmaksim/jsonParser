@@ -1,5 +1,5 @@
 {
-  "name": "jsonparser",
+  "name": "@di-night/jsonparser",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
