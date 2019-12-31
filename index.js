@@ -4,7 +4,7 @@ function doingJSON(path) {
   try {
     let jsonString = fs.readFileSync(path)
     let obj = JSON.parse(jsonString);
-    let res = new Set();
+    let res = {};
     getPathAndValues(obj, res);
     return res;
   } catch (err) {
@@ -24,8 +24,8 @@ function getPathAndValues(obj, res, prevKey) {
       getPathAndValues(obj[key], res, keyPath);
     } else {
       if (typeof (obj[key]) == 'string') {
-        if (!res.has(obj[key]))
-          res.add([keyPath, obj[key]]);
+        if (!res[obj[key]])
+          res[obj[key]] = keyPath;
       }
     }
   }
