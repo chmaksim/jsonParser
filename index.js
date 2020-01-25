@@ -1,9 +1,12 @@
 const fs = require('fs');
 
-function doingJSON(path) {
+function doingJSON(pathOrObject) {
   try {
-    let jsonString = fs.readFileSync(path)
-    let obj = JSON.parse(jsonString);
+    let obj = pathOrObject;
+    if (typeof pathOrObject === 'String'){
+      let jsonString = fs.readFileSync(path)
+      obj = JSON.parse(jsonString);
+    }
     let res = {};
     getPathAndValues(obj, res);
     return res;
