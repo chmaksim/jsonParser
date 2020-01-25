@@ -3,7 +3,7 @@ const fs = require('fs');
 function doingJSON(pathOrObject) {
   try {
     let obj = pathOrObject;
-    if (typeof pathOrObject === 'String'){
+    if (typeof pathOrObject === 'string'){
       let jsonString = fs.readFileSync(path)
       obj = JSON.parse(jsonString);
     }
