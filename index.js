@@ -4,7 +4,7 @@ function doingJSON(pathOrObject) {
   try {
     let obj = pathOrObject;
     if (typeof pathOrObject === 'string'){
-      let jsonString = fs.readFileSync(path)
+      let jsonString = fs.readFileSync(pathOrObject)
       obj = JSON.parse(jsonString);
     }
     let res = {};
