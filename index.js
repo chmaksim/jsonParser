@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-function doingJSON(path) {
+export function doingJSON(path) {
   try {
     let jsonString = fs.readFileSync(path)
     let obj = JSON.parse(jsonString);
@@ -30,7 +30,3 @@ function getPathAndValues(obj, res, prevKey) {
     }
   }
 }
-
-module.exports = {
-  doingJSON,
-};
